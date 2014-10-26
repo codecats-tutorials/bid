@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+    ServerAdmin admin@example.com
+    ServerName  localhost
+
+    WSGIScriptAlias / /bid/bid/wsgi.py
+    Alias /adminmedia/  /opt/python2.7/lib/python2.7/site-packages/django/contrib/admin/media/
+
+    <Directory "/bid/bid/">
+	Options Indexes FollowSymLinks
+	AllowOverride All
+	Require all granted
+    </Directory>
+</VirtualHost>
