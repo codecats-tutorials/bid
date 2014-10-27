@@ -11,4 +11,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # using a specific IP.
   config.vm.network "private_network", ip: "192.168.50.4"
   config.vm.synced_folder "src/", "/bid"
+  #Some errors may be resolved in graphical mode
+  #config.vm.provider :virtualbox do |vb|
+  #  vb.gui = true
+  #end
 end
