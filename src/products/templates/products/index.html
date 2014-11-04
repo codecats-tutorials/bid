@@ -1,0 +1,12 @@
+{% load staticfiles %}
+<div ng-controller="ProductsCtrl">
+    <ul>
+        <li ng-repeat="car in collection.models">
+            {$ car.name $}
+            <input type="number" ng-model="car.attributes.cost" />
+        </li>
+    </ul>
+    <p>
+        {$ collection.totalCost() | currency $}
+    </p>
+</div>

@@ -1,0 +1,18 @@
+<a href="#product-list">products</a>
+<a href="#example">example</a>
+<a href="#about">about</a>
+<div >{$ title $}</div>
+{$ title $}
+Works
+<button class="glyphicon glyphicon-plus">aaa</button>
+
+
+<ul>
+    <li ng-repeat="car in collection.models">
+        {$ car.name $}
+        <input type="number" ng-model="car.attributes.cost" />
+    </li>
+</ul>
+<p>
+    {$ collection.totalCost() | currency $}
+</p>

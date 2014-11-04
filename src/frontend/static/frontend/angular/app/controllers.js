@@ -1,7 +1,7 @@
 'use strict';
 
 var bidControllers = angular.module('bidControllers', []);
-/* Controllers */
+/* Ctrl */
 var data = [
     { id: 1, name: 'Honda', cost: 10 },
     { id: 2, name: 'Toyota', cost: 20 },
@@ -20,11 +20,17 @@ var CarCollection = Backbone.Collection.extend({
     }
 });
 
-
 bidControllers.
 controller('MainCtrl', ['$scope', '$http',
 function($scope, $http) {
+    $scope.title = 'ma'
+}]);
 
+
+bidControllers.
+controller('ExampleCtrl', ['$scope', '$http', '$location',
+function($scope, $http, $location) {
+    window['l'] = $location;
     $scope.title = 'a';
     var collection  = new CarCollection(data);
     $scope.collection = collection;

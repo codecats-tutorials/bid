@@ -3,76 +3,21 @@
 <html ng-app="bidApp" ng-controller="MainCtrl">
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>{$ title $}</title>
     <link type="text/css" href="{% static 'frontend/bootstrap/3.3.0/css/bootstrap.css' %}" rel="stylesheet" />
     <link type="text/css" href="{% static 'frontend/font-awesome/4.3.0/css/font-awesome.css' %}" rel="stylesheet" />
 </head>
 <body>
-
-
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button
-                    type="button"
-                    class="navbar-toggle collapsed"
-                    data-toggle="collapse"
-                    data-target="#navbar"
-                    aria-expanded="false"
-                    aria-controls="navbar"
-            >
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li><a href="../navbar-static-top/">Static top</a></li>
-            <li class="active"><a href="./">Fixed top</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
+    {% include 'header.html' %}
+    <br><br><br><br>
+    <div class="container" ng-view>
     </div>
-</nav>
-
-    <div class="container">
-        <br><br><br><br>
-        {$ title $}
-        Works
-        <button class="glyphicon glyphicon-plus">aaa</button>
-
-
-        <ul>
-            <li ng-repeat="car in collection.models">
-                {$ car.name $}
-                <input type="number" ng-model="car.attributes.cost" />
-            </li>
-        </ul>
-        <p>
-            {$ collection.totalCost() | currency $}
-        </p>
-    </div>
-
+    {% include 'footer.html' %}
+    {% block js %}
+        {% block templates %}
+            <script type="text/ng-template" id="main.html"></script>
+        {% endblock %}
+        {% block libs %}
     <script type="text/javascript" src="{% static 'frontend/underscore/1.7.0/underscore-min.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/jquery/2.1.1/jquery.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/bootstrap/3.3.0/js/bootstrap.js' %}"></script>
@@ -84,9 +29,12 @@
     <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-resource.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-cookies.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-route.js' %}"></script>
-
+        {% endblock %}
     <script type="text/javascript" src="{% static 'frontend/angular/app/main.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/angular/app/config.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/angular/app/controllers.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'products/app/controllers.js' %}"></script>
+    {% endblock %}
 </body>
 </html>
