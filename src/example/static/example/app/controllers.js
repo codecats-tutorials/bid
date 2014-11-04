@@ -1,10 +1,10 @@
 'use strict';
 
-bidControllers.
+bidApp.controllers.bid.
 controller('ExampleCtrl', ['$scope', '$http',
 function($scope, $http, $location) {
-    $scope.title = 'a';
-    var collection  = new CarCollection(data);
+    $scope.$parent.title = 'This is an example';
+    var collection  = new bidApp.models.CarCollection(bidApp.stores.cars);
     $scope.collection = collection;
     $scope.cars = collection.toJSON();
 }]);

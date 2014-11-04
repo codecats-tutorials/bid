@@ -1,10 +1,10 @@
 'use strict';
 
-var bidControllers = angular.module('bidControllers', []);
+bidApp.controllers.bid = angular.module('bidControllers', []);
 /* Ctrl */
 
-bidControllers.
+bidApp.controllers.bid.
 controller('MainCtrl', ['$scope', '$http',
 function($scope, $http) {
-    $scope.title = 'ma'
+    $scope.title = 'Bid'
 }]);
