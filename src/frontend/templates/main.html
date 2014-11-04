@@ -30,11 +30,19 @@
     <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-cookies.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-route.js' %}"></script>
         {% endblock %}
+        {% block app_frontend %}
     <script type="text/javascript" src="{% static 'frontend/angular/app/main.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/angular/app/config.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/angular/app/controllers.js' %}"></script>
-
+        {% endblock %}
+        {% block app_products %}
     <script type="text/javascript" src="{% static 'products/app/controllers.js' %}"></script>
+        {% endblock %}
+        {% block app_example %}
+    <script type="text/javascript" src="{% static 'example/app/stores.js' %}"></script>
+    <script type="text/javascript" src="{% static 'example/app/models.js' %}"></script>
+    <script type="text/javascript" src="{% static 'example/app/controllers.js' %}"></script>
+        {% endblock %}
     {% endblock %}
 </body>
 </html>
