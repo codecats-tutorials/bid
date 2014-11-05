@@ -1,16 +1,27 @@
 //TODO: add relational collection
 //http://backbonerelational.org/
-bidApp.models.CompanyCollection = Backbone.Collection.extend({});
+//TODO: models as factory
+bidApp.models.Product = Backbone.Collection.extend({
+    urlRoot     : '/product/',
+    relations   : [
+        {
+            type            : Backbone.HasOne,
+            key             : 'company',
+            relatedModel    : 'bidApp.models.Company',
+            collectionType  : 'bidApp.models.CompanyCollection',
+            reverseRelation : {
+                includeInJSON   : 'id',
+                type            : Backbone.HasMany,
+                key             : 'products',
+                relatedModel    : 'bidApp.models.Product'
+            }
+	    }
+    ]
+});
+bidApp.models.Company = Backbone.RelationalModel.extend({
+    urlRoot: '/company/'
+});
+
 bidApp.models.ProductCollection = Backbone.Collection.extend({
-    relations: [{
-		type: Backbone.HasOne,
-		key: 'company',
-		relatedModel: 'bidApp.models.CompanyCollection',
-		collectionType: 'AnimalCollection',
-		reverseRelation: {
-			key: 'livesIn',
-			includeInJSON: 'id'
-			// 'relatedModel' is automatically set to 'Zoo'; the 'relationType' to 'HasOne'.
-		}
-	}]
+    model: bidApp.models.Product
 });
