@@ -1,12 +1,12 @@
 {% load staticfiles %}
 <div ng-controller="ProductsCtrl">
     <ul>
-        <li ng-repeat="product in collection.models">
-            {$ product.attributes.name $}
-            <input type="number" ng-model="product.attributes.cost" />
+        <li ng-repeat="product in products">
+            {$ product.name $}
+            <input type="number" ng-model="product.cost" />
         </li>
     </ul>
     <p>
-        {$ collection.models.length $}
+        {$ products.length $}
     </p>
 </div>
