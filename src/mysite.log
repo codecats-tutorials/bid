@@ -2,3 +2,418 @@
 [15/Nov/2014 22:49:51] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
 [15/Nov/2014 22:57:11] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
 [15/Nov/2014 22:57:11] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[15/Nov/2014 23:22:49] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[15/Nov/2014 23:22:49] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[15/Nov/2014 23:22:51] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 8, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 13, in get
+    assert False
+AssertionError
+[15/Nov/2014 23:23:22] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[15/Nov/2014 23:23:22] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 19:32:53] DEBUG [django.db.backends:91] (0.032) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 19:32:53] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 19:33:05] WARNING [django.request:143] Not Found: /favicon.ico
+[16/Nov/2014 19:50:11] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 19:50:11] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 19:50:18] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 8, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 11, in get
+    self.response({}, 'abc')
+AttributeError: 'Products' object has no attribute 'response'
+[16/Nov/2014 19:51:05] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 19:51:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 19:55:49] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 12, in get
+    return render(request, 'aa', {})
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/shortcuts.py", line 48, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/loader.py", line 136, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: aa
+[16/Nov/2014 19:57:52] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 12, in get
+    return render(request, 'aa', {})
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/shortcuts.py", line 48, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/loader.py", line 136, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: aa
+[16/Nov/2014 19:58:20] DEBUG [django.db.backends:91] (0.003) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 19:58:20] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 19:59:09] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 19:59:09] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 19:59:11] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 12, in get
+    return render(request, 'products/products.ajax.html', {'products': Products.objects.all()})
+AttributeError: type object 'Products' has no attribute 'objects'
+[16/Nov/2014 20:00:09] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:00:09] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 20:00:11] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 13, in get
+    return render(request, 'products/products.ajax.html', {'products': models.Products.objects.all()})
+AttributeError: 'module' object has no attribute 'Products'
+[16/Nov/2014 20:00:56] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:00:56] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 20:01:05] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:01:05] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 13, in get
+    return render(request, 'products/products.ajax.html', {'products': models.Product.objects.all()})
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/shortcuts.py", line 48, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/template/defaulttags.py", line 162, in render
+    len_values = len(values)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 122, in __len__
+    self._fetch_all()
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 966, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 265, in iterator
+    for row in compiler.results_iter():
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 700, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 786, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 81, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 485, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: products_product
+[16/Nov/2014 20:01:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product" LIMIT 21' - PARAMS = (); args=()
+[16/Nov/2014 20:01:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product" LIMIT 21' - PARAMS = (); args=()
+[16/Nov/2014 20:01:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product" LIMIT 21' - PARAMS = (); args=()
+[16/Nov/2014 20:01:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product" LIMIT 21' - PARAMS = (); args=()
+[16/Nov/2014 20:01:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product" LIMIT 21' - PARAMS = (); args=()
+[16/Nov/2014 20:01:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product" LIMIT 21' - PARAMS = (); args=()
+[16/Nov/2014 20:02:15] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:02:15] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 20:02:15] DEBUG [django.db.backends:91] (0.000) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:02:15] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:02:15] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'logentry', u'admin'); args=('logentry', 'admin')
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (1,); args=(1,)
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'admin',); args=('admin',)
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'permission', u'auth'); args=('permission', 'auth')
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'group', u'auth'); args=('group', 'auth')
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'user', u'auth'); args=('user', 'auth')
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s, %s, %s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (2, 3, 4); args=(2, 3, 4)
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'auth',); args=('auth',)
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'contenttype', u'contenttypes'); args=('contenttype', 'contenttypes')
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (5,); args=(5,)
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'contenttypes',); args=('contenttypes',)
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'session', u'sessions'); args=('session', 'sessions')
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (6,); args=(6,)
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'sessions',); args=('sessions',)
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'product', u'products'); args=('product', 'products')
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'INSERT INTO "django_content_type" ("name", "app_label", "model") VALUES (%s, %s, %s)' - PARAMS = (u'product', u'products', u'product'); args=[u'product', 'products', 'product']
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'company', u'products'); args=('company', 'products')
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'INSERT INTO "django_content_type" ("name", "app_label", "model") VALUES (%s, %s, %s)' - PARAMS = (u'company', u'products', u'company'); args=[u'company', 'products', 'company']
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s, %s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (8, 7); args=(8, 7)
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'INSERT INTO "auth_permission" ("name", "content_type_id", "codename") SELECT %s AS "name", %s AS "content_type_id", %s AS "codename" UNION ALL SELECT %s, %s, %s UNION ALL SELECT %s, %s, %s UNION ALL SELECT %s, %s, %s UNION ALL SELECT %s, %s, %s UNION ALL SELECT %s, %s, %s' - PARAMS = (u'Can add product', 7, u'add_product', u'Can change product', 7, u'change_product', u'Can delete product', 7, u'delete_product', u'Can add company', 8, u'add_company', u'Can change company', 8, u'change_company', u'Can delete company', 8, u'delete_company'); args=(u'Can add product', 7, u'add_product', u'Can change product', 7, u'change_product', u'Can delete product', 7, u'delete_product', u'Can add company', 8, u'add_company', u'Can change company', 8, u'change_company', u'Can delete company', 8, u'delete_company')
+[16/Nov/2014 20:02:16] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'products',); args=('products',)
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL)' - PARAMS = (); args=[]
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL)' - PARAMS = (); args=[]
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'INSERT INTO "django_migrations" ("app", "name", "applied") VALUES (%s, %s, %s)' - PARAMS = (u'products', u'0001_initial', u'2014-11-16 20:02:58.209484'); args=['products', u'0001_initial', u'2014-11-16 20:02:58.209484']
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'logentry', u'admin'); args=('logentry', 'admin')
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (1,); args=(1,)
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'admin',); args=('admin',)
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'permission', u'auth'); args=('permission', 'auth')
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'group', u'auth'); args=('group', 'auth')
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'user', u'auth'); args=('user', 'auth')
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s, %s, %s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (2, 3, 4); args=(2, 3, 4)
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'auth',); args=('auth',)
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'contenttype', u'contenttypes'); args=('contenttype', 'contenttypes')
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (5,); args=(5,)
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'contenttypes',); args=('contenttypes',)
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'session', u'sessions'); args=('session', 'sessions')
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (6,); args=(6,)
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'sessions',); args=('sessions',)
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'product', u'products'); args=('product', 'products')
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = %s AND "django_content_type"."app_label" = %s) LIMIT 21' - PARAMS = (u'company', u'products'); args=('company', 'products')
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ( "auth_permission"."content_type_id" = "django_content_type"."id" ) WHERE "auth_permission"."content_type_id" IN (%s, %s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC' - PARAMS = (8, 7); args=(8, 7)
+[16/Nov/2014 20:02:58] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_content_type"."id", "django_content_type"."name", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %s ORDER BY "django_content_type"."name" ASC' - PARAMS = (u'products',); args=('products',)
+[16/Nov/2014 20:03:07] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:04:08] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:04:08] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:04:08] DEBUG [django.db.backends:91] (0.001) QUERY = u'INSERT INTO "products_product" ("name", "cost") VALUES (%s, %s)' - PARAMS = (None, None); args=[None, None]
+[16/Nov/2014 20:04:08] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 18, in post
+    product.save()
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/base.py", line 591, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/base.py", line 619, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/base.py", line 700, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/base.py", line 733, in _do_insert
+    using=using, raw=raw)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 921, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 920, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 81, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 485, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: NOT NULL constraint failed: products_product.name
+[16/Nov/2014 20:04:08] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product" LIMIT 21' - PARAMS = (); args=()
+[16/Nov/2014 20:04:38] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:04:38] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 20:04:40] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:04:40] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:04:40] DEBUG [django.db.backends:91] (0.002) QUERY = u'INSERT INTO "products_product" ("name", "cost") VALUES (%s, %s)' - PARAMS = (u'Samsung', None); args=['Samsung', None]
+[16/Nov/2014 20:04:40] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 18, in post
+    product.save()
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/base.py", line 591, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/base.py", line 619, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/base.py", line 700, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/base.py", line 733, in _do_insert
+    using=using, raw=raw)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/query.py", line 921, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 920, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 81, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 485, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: NOT NULL constraint failed: products_product.cost
+[16/Nov/2014 20:04:40] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product" LIMIT 21' - PARAMS = (); args=()
+[16/Nov/2014 20:05:04] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:05:04] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 20:05:10] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:05:10] DEBUG [django.db.backends:91] (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+[16/Nov/2014 20:05:10] DEBUG [django.db.backends:91] (0.001) QUERY = u'INSERT INTO "products_product" ("name", "cost") VALUES (%s, %s)' - PARAMS = (u'Samsung', 752.5); args=['Samsung', 752.5]
+[16/Nov/2014 20:05:10] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/django/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 20, in post
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[16/Nov/2014 20:06:03] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:15:05] DEBUG [django.db.backends:91] (0.213) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:15:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 20:25:01] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:28:53] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:28:53] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 20:33:29] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:34:00] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[16/Nov/2014 20:34:00] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[16/Nov/2014 20:34:08] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:36:04] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:36:47] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:38:16] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:38:22] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:39:42] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 20:57:33] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:00:52] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:00:57] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:04:06] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:07:44] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:11:54] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:12:17] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:12:40] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:16:49] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:29:22] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:33:41] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:33:56] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:34:05] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:34:18] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:34:30] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:34:46] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:34:48] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:34:56] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:35:06] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:35:13] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:35:27] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:36:06] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:36:31] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:37:00] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:37:21] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:37:41] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:38:48] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:40:56] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[16/Nov/2014 21:41:06] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()

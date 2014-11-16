@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+
+class Product(models.Model):
+    name = models.CharField(max_length=255)
+    cost = models.FloatField()
+
+class Company(models.Model):
+    name = models.CharField(max_length=255)
