@@ -2,9 +2,8 @@ var bidApp = angular.module('bidApp', [
     'ngRoute',
     'ngCookies',
     'bidControllers',
-//    'bidFilters',
-//    'bidServices',
-//    'bidUserControllers'
+    'bidServices'
+//    'bidFilters'
 ]);
 
 bidApp.run(function run ($http, $cookies) {

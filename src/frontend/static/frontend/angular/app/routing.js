@@ -2,7 +2,7 @@ bidApp.
 config(['$routeProvider',  function($routeProvider) {
     $routeProvider
     .when('/product-list', {
-        templateUrl     : 'products/index.html',
+        templateUrl     : 'products/index.html'
         //controller    : 'aaaCtrl'
     })
     .when('/example', {

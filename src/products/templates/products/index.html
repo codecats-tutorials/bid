@@ -2,13 +2,14 @@
 <div ng-controller="ProductsCtrl">
     <ul>
         <li ng-repeat="product in products">
-            {$ product.name $}
-            <input type="number" step="any" ng-model="product.cost" />
+            <div>
+                {$ product.name $}
+                <input type="number" step="any" ng-model="product.cost" />
+            </div>
         </li>
     </ul>
     <p>
         {$ products.length $}
     </p>
-    aa
-    <div class="loading"></div>
+    <aa></aa>
 </div>

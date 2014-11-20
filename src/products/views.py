@@ -1,5 +1,6 @@
 import json
 import logging
+from time import sleep
 from django.forms import model_to_dict
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
@@ -8,6 +9,7 @@ from products import models
 
 class Products(APIView):
     def get(self, request, *args, **kwargs):
+        sleep(3)
         a = 4
         print 'aaaaaaaaaa'
         #return HttpResponse('a')
@@ -19,10 +21,11 @@ class Products(APIView):
         return render(request, 'products/products.ajax.html', {'products': models.Product.objects.all()})
 
     def post(self, request, *args, **kwargs):
-        product = models.Product()
-        product.name = request.DATA.get('name', 'Samsung')
-        product.cost = 752.5
-        product.save()
+
+        # product = models.Product()
+        # product.name = request.DATA.get('name', 'Samsung')
+        # product.cost = 752.5
+        # product.save()
         self.response({}, '')
 
     def update(self, request, *args, **kwargs):

@@ -6,8 +6,19 @@ bidApp.controllers.bid = angular.module('bidControllers', []);
 bidApp.controllers.bid.
 controller('MainCtrl', ['$scope', '$http',
 function($scope, $http) {
-    var body = angular.element('body');
+    var body            = angular.element('body'),
+        btnAddProduct   = angular.element('#add-product');
     body.addClass('loading')
     $scope.title = 'Bid'
+    //events
+    btnAddProduct.bind('click', function () {
+        btnAddProduct.addClass('loading');
+        var removeMask = function () {
+            btnAddProduct.removeClass('loading');
+        };
+        $scope.$broadcast('onAddProduct', removeMask)
+    });
+
+
     body.removeClass('loading')
 }]);

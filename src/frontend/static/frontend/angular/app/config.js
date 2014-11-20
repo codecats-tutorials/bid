@@ -11,3 +11,5 @@ config(function($interpolateProvider) {
 bidApp['controllers']   = {};
 bidApp['models']        = {};
 bidApp['stores']        = {};
+bidApp['services']      = {};
+bidApp['filters']       = {};
