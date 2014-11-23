@@ -11,10 +11,8 @@ bidApp.services.bid
         this['scope']       = this;
         this['setContent']  = function (contentObjects) {
             for (var i in contentObjects) {
-                //this.view.find('.modal-' + i).html(contentObjects[i]);
                 this.ctrl[i] = contentObjects[i];
             }
-            this.ctrl.$apply();
         };
         this['setBody']     = function (body) {
             this.setContent({'body': body});
@@ -24,8 +22,9 @@ bidApp.services.bid
         };
         this['show']        = function (callback) {
             if (typeof callback === 'undefined') callback = function () {};
-            service.view.modal()
-            callback.call(service, arguments)
+            service.view.modal();
+            callback.call(service, arguments);
+            service.ctrl.$apply();
         };
         return service;
     }

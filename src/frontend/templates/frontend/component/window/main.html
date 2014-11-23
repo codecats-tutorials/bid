@@ -6,12 +6,20 @@
                 <h4 class="modal-title">{$ title $}</h4>
             </div>
             <div class="modal-body">
-                <p>{$ body $}</p>
+                <p ng-bind-html="renderHtml(body)"></p>
             </div>
             <div class="modal-footer" ng-model="abc">
                 <div ng-bind="abc"></div>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <span ng-repeat="button in buttons">
+                    <button
+                            ng-click="getFunction(button, this)"
+                            type="button"
+                            class="btn {$ renderClass(button) $}"
+                    >
+                        {$ button.name $}
+                    </button>
+                </span>
             </div>
         </div>
     </div>

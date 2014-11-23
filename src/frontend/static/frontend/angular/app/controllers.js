@@ -24,6 +24,19 @@ function($scope, $http) {
 }]);
 
 bidApp.controllers.bid.
-    controller('ModalController', ['$scope', '$http', 'ModalService', function ($scope, $http, service) {
-        service['ctrl'] = $scope;
+    controller(
+        'ModalController', ['$scope', '$http', '$sce', 'ModalService',
+        function ($scope, $http, $sce, service) {
+            $scope.renderHtml   = function (html) {
+                return $sce.trustAsHtml(html);
+            };
+            $scope.renderClass  = function (btn) {
+                return (typeof btn.class !== 'undefined') ? btn.class : 'btn-primary';
+            };
+            $scope.getFunction  = function (btn, me) {
+                var func = (typeof btn.function !== 'undefined') ? btn.function : function () {};
+                return func(btn, me);
+            };
+            service['ctrl']     = $scope;
+            service['_ctrl']    = this;
     }]);

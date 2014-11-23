@@ -21,9 +21,24 @@ function($scope, $http, modalService) {
         });
 
     $scope.$on('onAddProduct', function (e, removeMask) {
-        window['service'] = modalService
         modalService.show(function () {
-            this.setContent({'body':'aaa<hr><h1>BBB</h1>', 'title': 'Tytuł'})
+            this.setContent({
+                'body'      :'aaa<hr><h1>BBB</h1>',
+                'title'     : 'Tytuł',
+                'buttons'   : [
+                    {
+                        name    : 'Save it',
+                        function: function () {
+                            console.log('AGREEMENTS');
+                            console.log(arguments);
+                        }
+                    },
+                    {
+                        name    : 'Delete',
+                        class   : 'btn-danger'
+                    }
+                ]
+            });
         });
         //modalService.body = 'bbbbbbbbb';
         removeMask();
