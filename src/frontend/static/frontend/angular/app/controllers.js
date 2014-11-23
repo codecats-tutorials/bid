@@ -22,3 +22,8 @@ function($scope, $http) {
 
     body.removeClass('loading')
 }]);
+
+bidApp.controllers.bid.
+    controller('ModalController', ['$scope', '$http', 'ModalService', function ($scope, $http, service) {
+        service['ctrl'] = $scope;
+    }]);

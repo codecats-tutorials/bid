@@ -1,0 +1,20 @@
+[
+{
+  "fields": {
+    "username": "t",
+    "first_name": "",
+    "last_name": "",
+    "is_active": true,
+    "is_superuser": true,
+    "is_staff": true,
+    "last_login": "2014-11-23T20:24:47.053Z",
+    "groups": [],
+    "user_permissions": [],
+    "password": "pbkdf2_sha256$12000$1ycJM0UQqsEx$UpQpI25PriGQDatUmpx9PBofaW2SLHzw/iVc0H4e3Ng=",
+    "email": "t@t.pl",
+    "date_joined": "2014-11-23T20:24:17.814Z"
+  },
+  "model": "auth.user",
+  "pk": 1
+}
+]

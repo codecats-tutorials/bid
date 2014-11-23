@@ -9,5 +9,5 @@ djangorestframework
 markdown
 django-filter
 
-#debuger
-Werkzeug
+#selenium
+selenium
