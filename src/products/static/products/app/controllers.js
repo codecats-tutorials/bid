@@ -21,9 +21,13 @@ function($scope, $http, modalService) {
         });
 
     $scope.$on('onAddProduct', function (e, removeMask) {
+        console.log('onAddProduct')
         modalService.show(function () {
             this.setContent({
-                'body'      :'aaa<hr><h1>BBB</h1>',
+                'body'      : {
+                    type: 'form',
+                    url : 'products/product?type=form'
+                },
                 'title'     : 'Tytuł',
                 'buttons'   : [
                     {

@@ -13,13 +13,17 @@ class Products(APIView):
         a = 4
         print 'aaaaaaaaaa'
         #return HttpResponse('a')
+        action = 'get_{}'.format(request.GET.get('type', 'default'))
+        return getattr(self, action)(request, *args, **kwargs)
+
+        #return render(request, 'products/products.ajax.html', {'products': models.Product.objects.all()})
+    def get_default(self, request, *args, **kwargs):
         return JsonResponse({
             'success': True,
             'data': [model_to_dict(product) for product in models.Product.objects.all()],
         })
-
-        return render(request, 'products/products.ajax.html', {'products': models.Product.objects.all()})
-
+    def get_form(self, request, *args, **kwargs):
+        return render(request, 'products/form.html', {})
     def post(self, request, *args, **kwargs):
 
         # product = models.Product()
