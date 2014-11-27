@@ -6,20 +6,18 @@ from selenium.webdriver.common.keys import Keys
 
 from django.test import LiveServerTestCase
 
-class ProductsTest(LiveServerTestCase):
-    #fixtures = ['admin.json']
+class AdminTest(LiveServerTestCase):
+    fixtures = ['admin.json']
 
     def setUp(self):
         self.browser = webdriver.Firefox()
-        self.browser.implicitly_wait(3)
 
     def tearDown(self):
-        pass
-        #self.browser.quit()
+        self.browser.quit()
 
     def test_admin_site(self):
         # user opens web browser, navigates to admin page
-        self.browser.get(self.live_server_url)
+        self.browser.get(self.live_server_url + '/admin/')
         body = self.browser.find_element_by_tag_name('body')
         self.assertIn('Django administration', body.text)
         # users types in username and passwords and presses enter

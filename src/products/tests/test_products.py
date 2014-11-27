@@ -11,11 +11,9 @@ class ProductsTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
-        self.browser.implicitly_wait(3)
 
     def tearDown(self):
-        pass
-        #self.browser.quit()
+        self.browser.quit()
 
     def test_admin_site(self):
         # user opens web browser, navigates to admin page

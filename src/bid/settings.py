@@ -10,6 +10,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import sys
+import re
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -142,3 +145,6 @@ if 'HEROKU' in os.environ:
         DATABASES['default'] = dj_database_url.config(default='postgres://localhost')
     except ImportError:
         pass
+
+
+MEDIA_ROOT = ''
