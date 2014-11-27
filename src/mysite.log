@@ -14235,3 +14235,1065 @@ AttributeError: 'module' object has no attribute 'MEDIA_ROOT'
 [26/Nov/2014 16:49:02] WARNING [django.request:143] Not Found: /favicon.ico
 [26/Nov/2014 16:49:11] WARNING [django.request:143] Not Found: /favicon.ico
 [26/Nov/2014 16:49:11] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 19:54:29] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 19:54:44] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 19:54:58] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:13:52] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:13:53] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:13:53] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:13:53] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:13:53] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:13:53] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:13:53] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:13:53] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:14:00] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:14:00] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:14:09] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:15:04] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:15:11] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:15:11] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:16:27] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:16:27] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:16:27] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:16:27] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:16:27] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:16:27] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:16:27] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:16:27] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:16:27] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:16:28] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:16:34] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:16:34] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:16:43] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:16:43] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:18:05] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:18:11] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:18:11] WARNING [django.request:143] Not Found: /static/admin/css/login.css
+[27/Nov/2014 20:18:11] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:18:12] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:18:13] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:18:13] WARNING [django.request:143] Not Found: /static/admin/css/dashboard.css
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/css/bootstrap.css
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/font-awesome/4.3.0/css/font-awesome.css
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/component/mask.css
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/underscore/1.7.0/underscore-min.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:18:19] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:18:20] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:18:20] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:18:20] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:18:20] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:19:37] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:19:43] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:19:43] WARNING [django.request:143] Not Found: /static/admin/css/login.css
+[27/Nov/2014 20:19:43] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:19:43] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:19:46] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:19:46] WARNING [django.request:143] Not Found: /static/admin/css/dashboard.css
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/css/bootstrap.css
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/font-awesome/4.3.0/css/font-awesome.css
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/component/mask.css
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/underscore/1.7.0/underscore-min.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:19:52] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:20:27] DEBUG [django.db.backends:91] (0.009) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[27/Nov/2014 20:20:27] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[27/Nov/2014 20:20:45] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:20:45] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:21:24] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[27/Nov/2014 20:21:24] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:21:28] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:21:37] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:21:43] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:21:43] WARNING [django.request:143] Not Found: /static/admin/css/login.css
+[27/Nov/2014 20:21:43] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:21:43] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:21:44] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:21:44] WARNING [django.request:143] Not Found: /static/admin/css/dashboard.css
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/css/bootstrap.css
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/font-awesome/4.3.0/css/font-awesome.css
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/component/mask.css
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/underscore/1.7.0/underscore-min.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:21:51] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:23:55] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:24:01] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:24:01] WARNING [django.request:143] Not Found: /static/admin/css/login.css
+[27/Nov/2014 20:24:01] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:24:01] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:24:03] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:24:03] WARNING [django.request:143] Not Found: /static/admin/css/dashboard.css
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/css/bootstrap.css
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/font-awesome/4.3.0/css/font-awesome.css
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/component/mask.css
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/underscore/1.7.0/underscore-min.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:24:09] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:24:35] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:24:41] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:24:41] WARNING [django.request:143] Not Found: /static/admin/css/login.css
+[27/Nov/2014 20:24:41] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:24:41] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:24:43] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:24:43] WARNING [django.request:143] Not Found: /static/admin/css/dashboard.css
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/css/bootstrap.css
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/font-awesome/4.3.0/css/font-awesome.css
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/component/mask.css
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/underscore/1.7.0/underscore-min.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:24:49] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:24:50] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:24:57] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:25:03] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:25:03] WARNING [django.request:143] Not Found: /static/admin/css/login.css
+[27/Nov/2014 20:25:03] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:25:03] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:25:05] WARNING [django.request:143] Not Found: /static/admin/css/base.css
+[27/Nov/2014 20:25:05] WARNING [django.request:143] Not Found: /static/admin/css/dashboard.css
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/css/bootstrap.css
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/font-awesome/4.3.0/css/font-awesome.css
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/component/mask.css
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/underscore/1.7.0/underscore-min.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/jquery/2.1.1/jquery.min.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/bootstrap/3.3.0/js/bootstrap.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/backbone/1.1.2/backbone.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/backbone/0.9.0/backbone-relational.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/1.3/angular.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/django-angular.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-resource.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-cookies.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/lib/angular-route.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/app/main.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/app/config.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/app/routing.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/app/controllers.js
+[27/Nov/2014 20:25:11] WARNING [django.request:143] Not Found: /static/frontend/angular/app/services.js
+[27/Nov/2014 20:25:12] WARNING [django.request:143] Not Found: /static/products/app/stores.js
+[27/Nov/2014 20:25:12] WARNING [django.request:143] Not Found: /static/products/app/models.js
+[27/Nov/2014 20:25:12] WARNING [django.request:143] Not Found: /static/products/app/controllers.js
+[27/Nov/2014 20:25:12] WARNING [django.request:143] Not Found: /static/example/app/stores.js
+[27/Nov/2014 20:25:12] WARNING [django.request:143] Not Found: /static/example/app/models.js
+[27/Nov/2014 20:25:12] WARNING [django.request:143] Not Found: /static/example/app/controllers.js
+[27/Nov/2014 20:25:12] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:27:15] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:27:22] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:27:22] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:27:31] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:27:31] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 20:57:34] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 20:57:42] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 20:57:42] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:03:20] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[27/Nov/2014 21:03:20] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[27/Nov/2014 21:03:27] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:04:17] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:04:25] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:04:25] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:05:01] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:05:09] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:05:17] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:05:17] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:07:44] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:07:52] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:07:52] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:08:19] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:09:18] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:09:26] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:09:26] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:09:45] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:09:53] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:09:53] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:11:22] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:11:30] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:11:30] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:11:56] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:12:05] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:12:05] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:14:44] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:14:52] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:14:52] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:16:18] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:16:26] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:16:26] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:18:13] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:18:21] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:18:21] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:19:12] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:19:21] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:19:21] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:19:45] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:19:52] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:19:52] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_content_type__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, UNIQUE ("app_label", "model")); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] INSERT INTO "django_content_type__new" ("model", "app_label", "id", "name") SELECT "model", "app_label", "id", "name" FROM "django_content_type"; (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] DROP TABLE "django_content_type"; (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] ALTER TABLE "django_content_type__new" RENAME TO "django_content_type"; (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"), "codename" varchar(100) NOT NULL, UNIQUE ("content_type_id", "codename")); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("group_id", "permission_id")); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "group_id" integer NOT NULL REFERENCES "auth_group" ("id"), UNIQUE ("user_id", "group_id")); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id"), "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"), UNIQUE ("user_id", "permission_id")); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_permission_417f1b1c ON "auth_permission" ("content_type_id"); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_0e939a4f ON "auth_group_permissions" ("group_id"); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_group_permissions_8373b171 ON "auth_group_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_e8701ad4 ON "auth_user_groups" ("user_id"); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_groups_0e939a4f ON "auth_user_groups" ("group_id"); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_e8701ad4 ON "auth_user_user_permissions" ("user_id"); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE INDEX auth_user_user_permissions_8373b171 ON "auth_user_user_permissions" ("permission_id"); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id"), "user_id" integer NOT NULL REFERENCES "auth_user" ("id")); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_417f1b1c ON "django_admin_log" ("content_type_id"); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE INDEX django_admin_log_e8701ad4 ON "django_admin_log" ("user_id"); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_company" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "products_product" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(255) NOT NULL, "cost" real NOT NULL); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params [])
+[27/Nov/2014 21:21:12] DEBUG [django.db.backends.schema:94] CREATE INDEX django_session_de54fa62 ON "django_session" ("expire_date"); (params [])
+[27/Nov/2014 21:21:20] WARNING [django.request:143] Not Found: /favicon.ico
+[27/Nov/2014 21:21:20] WARNING [django.request:143] Not Found: /favicon.ico

@@ -148,3 +148,4 @@ if 'HEROKU' in os.environ:
 
 
 MEDIA_ROOT = ''
+STATIC_ROOT = '/home/t/py/django/bid/src/static'
