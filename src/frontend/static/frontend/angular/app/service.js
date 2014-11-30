@@ -1,8 +1,8 @@
 'use strict'
 
-bidApp.services.bid = angular.module('bidServices', []);
+bidApp.service.bid = angular.module('bidService', []);
 
-bidApp.services.bid
+bidApp.service.bid
     .factory('ModalEventService', [function () {
         var service = this;
 

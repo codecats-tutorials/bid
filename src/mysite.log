@@ -15477,3 +15477,11 @@ AttributeError: 'module' object has no attribute 'MEDIA_ROOT'
 [30/Nov/2014 16:27:07] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
 [30/Nov/2014 16:32:38] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
 [30/Nov/2014 16:34:59] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 19:25:44] DEBUG [django.db.backends:91] (0.013) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[30/Nov/2014 19:25:45] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[30/Nov/2014 19:26:19] WARNING [django.request:143] Not Found: /favicon.ico
+[30/Nov/2014 19:26:23] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 19:49:07] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 19:49:35] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 19:54:28] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 19:55:01] DEBUG [django.db.backends:91] (0.003) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()

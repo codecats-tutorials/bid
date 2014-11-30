@@ -1,15 +1,15 @@
 'use strict';
 
-bidApp.controllers.bid = angular.module('bidControllers', []);
+bidApp.controller.bid = angular.module('bidController', []);
 /* Ctrl */
 
-bidApp.controllers.bid.
+bidApp.controller.bid.
     controller('MainCtrl', ['$scope', '$http',
         function($scope, $http) {
             var body            = angular.element('body'),
                 btnAddProduct   = angular.element('#add-product');
-            body.addClass('loading')
-            $scope.title = 'Bid'
+            body.addClass('loading');
+            $scope.title = 'Bid';
             //events
             btnAddProduct.bind('click', function () {
                 btnAddProduct.addClass('loading');
@@ -25,7 +25,7 @@ bidApp.controllers.bid.
             body.removeClass('loading')
         }]);
 
-bidApp.controllers.bid.
+bidApp.controller.bid.
     controller('ModalCtrl', ['$scope', '$http', '$sce',
         function ($scope, $http, $sce) {
             $scope.view = angular.element('#modal');
@@ -59,7 +59,6 @@ bidApp.controllers.bid.
             };
             $scope.createComponent  = function (object) {
                 //array
-                console.log(object)
                 if (typeof object === 'object' && typeof object.length === 'number') {
                     $scope.modalBody = object.type
                 } else if (typeof object === 'object' && typeof object.type !== 'undefined' && object.type === 'form') {
@@ -76,12 +75,14 @@ bidApp.controllers.bid.
             };
             //events
             $scope.$on('onAddProduct', function (e, removeMask) {
-                console.log('yeah')
                 $scope.show(function () {
                     $scope.setContent({
                         'body'      : {
-                            type: 'form',
-                            url : 'products/product?type=form'
+                            type        : 'form',
+                            url         : 'products/product?type=form',
+                            function    : function () {
+                                console.log('callback')
+                            }
                         },
                         'title'     : 'Tytuł',
                         'buttons'   : [

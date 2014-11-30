@@ -1,9 +1,9 @@
 'use strict';
 
-bidApp.controllers.bid.
+bidApp.controller.bid.
 controller('ProductsCtrl', ['$scope', '$http',// 'ModalEventService',
 function($scope, $http) {
-    $scope.collection = new bidApp.models.Product(bidApp.stores.products);
+    $scope.collection = new bidApp.model.Product(bidApp.store.products);
     $scope.products = $scope.collection.getProducts();
 
     var view = angular.element('[ng-controller=ProductsCtrl]')
@@ -11,7 +11,7 @@ function($scope, $http) {
     $http.get('products/product').
         success(function (data, status, headers, config) {
             if (data.success) {
-                $scope.collection = new bidApp.models.Product(data.data);
+                $scope.collection = new bidApp.model.Product(data.data);
                 $scope.products = $scope.collection.getProducts();
             }
             view.removeClass('loading');

@@ -1,4 +1,4 @@
-bidApp.models.CarCollection = Backbone.Collection.extend({
+bidApp.model.CarCollection = Backbone.Collection.extend({
     totalCost: function() {
         var total = 0;
 

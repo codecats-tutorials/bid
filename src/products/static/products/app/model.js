@@ -1,14 +1,14 @@
 //TODO: add relational collection
 //http://backbonerelational.org/
 //TODO: models as factory
-bidApp.models.Product = Backbone.RelationalModel.extend({
+bidApp.model.Product = Backbone.RelationalModel.extend({
     urlRoot     : '/product/',
     relations   : [
         {
             type            : Backbone.HasOne,
             key             : 'company',
-            relatedModel    : 'bidApp.models.Company',
-            collectionType  : 'bidApp.models.CompanyCollection',
+            relatedModel    : 'bidApp.model.Company',
+            collectionType  : 'bidApp.model.CompanyCollection',
             reverseRelation : {
                 includeInJSON   : 'id',
                 type            : Backbone.HasMany,
@@ -30,14 +30,14 @@ bidApp.models.Product = Backbone.RelationalModel.extend({
         return all;
     }
 });
-bidApp.models.Company = Backbone.RelationalModel.extend({
+bidApp.model.Company = Backbone.RelationalModel.extend({
     urlRoot: '/company/'
 });
 
-bidApp.models.ProductCollection = Backbone.Collection.extend({
-    model: bidApp.models.Product
+bidApp.model.ProductCollection = Backbone.Collection.extend({
+    model: bidApp.model.Product
 });
 
-bidApp.models.CompanyCollection = Backbone.Collection.extend({
-    model: bidApp.models.Company
+bidApp.model.CompanyCollection = Backbone.Collection.extend({
+    model: bidApp.model.Company
 });

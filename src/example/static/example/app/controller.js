@@ -1,6 +1,6 @@
 'use strict';
 
-bidApp.controllers.bid.
+bidApp.controller.bid.
 controller('ExampleCtrl', ['$scope', '$http',
 function($scope, $http, $location) {
     $scope.$parent.title = 'This is an example';
