@@ -8,6 +8,8 @@
     <link type="text/css" href="{% static 'frontend/font-awesome/4.3.0/css/font-awesome.css' %}" rel="stylesheet" />
 
     <link type="text/css" href="{% static 'frontend/bootstrap/component/mask.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'frontend/angular/angular-motion.css' %}" rel="stylesheet" />
+
 </head>
 <body>
     {% include 'header.html' %}
@@ -34,6 +36,11 @@
     <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-resource.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-cookies.js' %}"></script>
     <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-route.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-animate.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-strap/dist/angular-strap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/angular/lib/angular-strap/dist/angular-strap.tpl.min.js' %}"></script>
+
         {% endblock %}
         {% block app_frontend %}
     <script type="text/javascript" src="{% static 'frontend/angular/app/main.js' %}"></script>

@@ -26,8 +26,8 @@ bidApp.controller.bid.
         }]);
 
 bidApp.controller.bid.
-    controller('ModalCtrl', ['$scope', '$http',
-        function ($scope, $http) {
+    controller('ModalCtrl', ['$scope', '$http', '$modal',
+        function ($scope, $http, $modal) {
             $scope.view = angular.element('#modal');
             $scope.data = {};
             $scope.setContent       = function (contentObjects) {
@@ -97,8 +97,6 @@ bidApp.controller.bid.
                             type        : 'form',
                             url         : 'products/product?type=form',
                             onAfterBind : function (data) {
-                                window['t'] = this;
-                                console.log(this)
                                 this.data.name = 'initialized'
                             }
                         },
@@ -115,10 +113,22 @@ bidApp.controller.bid.
                                         data    : {data: data}
                                     }).then(
                                         function success () {
+                                            $modal({
+                                                title           : 'Error',
+                                                content         : 'Error',
+                                                animation       : 'am-fade-and-slide-top',
+                                                backdropAnimation: 'am-fade-and-slide-top'
+                                            });
 
                                         },
                                         function failure () {
-
+                                            $modal({
+                                                title           : 'Error',
+                                                content         : 'Error',
+                                                template: 'test.html',
+                                                animation       : 'am-fade-and-slide-bottom',
+                                                backdropAnimation: 'am-fade-and-slide-top'
+                                            });
                                         }
                                     );
                                 }
