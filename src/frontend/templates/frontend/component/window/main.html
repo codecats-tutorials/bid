@@ -9,7 +9,7 @@
                 <h4 class="modal-title">{$ title $}</h4>
             </div>
             <div class="modal-body" rel="modal-body">
-                <p ng-bind-html="modalBody"></p>
+                <div bind-html-unsafe="modalBody"></div>
             </div>
             <div class="modal-footer" ng-model="abc">
                 <div ng-bind="abc"></div>
@@ -18,7 +18,7 @@
                     <button
                             ng-click="getFunction(button, this)"
                             type="button"
-                            class="btn {$ renderClass(button) $}"
+                            class="btn {$ renderClass(button) $} {$ disabled $}"
                     >
                         {$ button.name $}
                     </button>

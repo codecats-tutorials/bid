@@ -15485,3 +15485,273 @@ AttributeError: 'module' object has no attribute 'MEDIA_ROOT'
 [30/Nov/2014 19:49:35] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
 [30/Nov/2014 19:54:28] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
 [30/Nov/2014 19:55:01] DEBUG [django.db.backends:91] (0.003) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:00:33] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:02:54] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:08:42] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:09:44] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:11:35] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:13:57] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:15:26] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:16:35] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:19:12] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:21:16] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:24:12] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:24:53] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:25:54] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:26:53] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:33:10] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:33:38] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:38:31] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:47:45] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:49:26] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:53:11] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 20:53:14] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 17, in get
+    return getattr(self, action)(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 26, in get_form
+    return render(request, 'products/form.html', {})
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/shortcuts.py", line 48, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/template/base.py", line 344, in invalid_block_tag
+    raise self.error(token, "Invalid block tag: '%s'" % command)
+TemplateSyntaxError: Invalid block tag: 'path'
+[30/Nov/2014 20:53:36] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:05:13] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:05:20] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 33, in post
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:05:48] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:11:19] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:11:28] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 33, in post
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:13:08] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:13:55] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:14:58] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:16:08] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:16:17] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 33, in post
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:17:31] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:17:37] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 33, in post
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:22:43] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:22:49] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 33, in post
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:23:14] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:23:56] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[30/Nov/2014 21:23:56] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[30/Nov/2014 21:24:00] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:24:10] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 36, in put
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:24:20] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 36, in put
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:25:48] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:25:55] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 33, in post
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:31:26] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:32:51] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:37:33] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:39:20] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:39:29] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 33, in post
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:40:29] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:40:35] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 33, in post
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:41:58] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()
+[30/Nov/2014 21:42:03] ERROR [django.request:231] Internal Server Error: /products/product
+Traceback (most recent call last):
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/code_cats/views.py", line 9, in dispatch
+    return super(APIView, self).dispatch(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 403, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/t/py/django/bid/src/venv/local/lib/python2.7/site-packages/rest_framework/views.py", line 400, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/t/py/django/bid/src/products/views.py", line 33, in post
+    self.response({}, '')
+AttributeError: 'Products' object has no attribute 'response'
+[30/Nov/2014 21:46:31] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "products_product"."id", "products_product"."name", "products_product"."cost" FROM "products_product"' - PARAMS = (); args=()

@@ -32,7 +32,7 @@ class Products(APIView):
         # product.save()
         self.response({}, '')
 
-    def update(self, request, *args, **kwargs):
+    def put(self, request, *args, **kwargs):
         self.response({}, '')
 
     def delete(self, request, *args, **kwargs):
