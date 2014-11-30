@@ -13,27 +13,93 @@ bidApp.controllers.bid.
             //events
             btnAddProduct.bind('click', function () {
                 btnAddProduct.addClass('loading');
-                var removeMask = function () {
-                    btnAddProduct.removeClass('loading');
+                var removeMask = function (modalCtrlScope) {
+                    setTimeout(function () {
+                        btnAddProduct.removeClass('loading');
+                    }, 1);
                 };
-                $scope.$broadcast('onAddProduct', removeMask)
+
+                $scope.$broadcast('onAddProduct', removeMask);
             });
 
             body.removeClass('loading')
         }]);
 
 bidApp.controllers.bid.
-    controller(
-        'ModalController', ['$scope', '$http', '$sce', 'ModalService', 'ComponentService',
-        function ($scope, $http, $sce, modalService, componentService) {
-            $scope.createComponent = componentService.createComponent;
-            $scope.renderClass  = function (btn) {
+    controller('ModalCtrl', ['$scope', '$http', '$sce',
+        function ($scope, $http, $sce) {
+            $scope.view = angular.element('#modal');
+            $scope.setContent       = function (contentObjects) {
+                for (var i in contentObjects) {
+                    if (i === 'body') {
+                        $scope.createComponent(contentObjects[i]);
+                    } else {
+                        $scope[i] = contentObjects[i];
+                    }
+                }
+                $scope.$apply();
+            };
+            $scope.setBody          = function (body) {
+                $scope.setContent({'body': body});
+            };
+            $scope.setTitle         = function (title) {
+                this.setContent({'title': title});
+            };
+            $scope.show             = function (callback) {
+                if (typeof callback === 'undefined') callback = function () {};
+                $scope.view.modal();
+                callback.call($scope, arguments);
+            };
+            $scope.renderClass      = function (btn) {
                 return (typeof btn.class !== 'undefined') ? btn.class : 'btn-primary';
             };
-            $scope.getFunction  = function (btn, me) {
+            $scope.getFunction      = function (btn, me) {
                 var func = (typeof btn.function !== 'undefined') ? btn.function : function () {};
                 return func(btn, me);
             };
-            modalService['ctrl']     = $scope;
-            modalService['_ctrl']    = this;
+            $scope.createComponent  = function (object) {
+                //array
+                console.log(object)
+                if (typeof object === 'object' && typeof object.length === 'number') {
+                    $scope.modalBody = object.type
+                } else if (typeof object === 'object' && typeof object.type !== 'undefined' && object.type === 'form') {
+                    //form
+                    angular.element('body').addClass('loading');
+                    $http.get(object.url).success(function (data) {
+                        $scope.modalBody = $sce.trustAsHtml(data);
+                        angular.element('body').removeClass('loading');
+                    });
+                } else if (typeof object === 'string') {
+                    //string dom component
+                    $scope.modalBody = $sce.trustAsHtml(object);
+                };
+            };
+            //events
+            $scope.$on('onAddProduct', function (e, removeMask) {
+                console.log('yeah')
+                $scope.show(function () {
+                    $scope.setContent({
+                        'body'      : {
+                            type: 'form',
+                            url : 'products/product?type=form'
+                        },
+                        'title'     : 'Tytuł',
+                        'buttons'   : [
+                            {
+                                name    : 'Save it',
+                                function: function () {
+                                    console.log('AGREEMENTS');
+                                    console.log(arguments);
+                                }
+                            },
+                            {
+                                name    : 'Delete',
+                                class   : 'btn-danger'
+                            }
+                        ]
+                    });
+                });
+
+                removeMask($scope);
+            });
     }]);

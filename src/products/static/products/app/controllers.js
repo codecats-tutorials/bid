@@ -1,11 +1,11 @@
 'use strict';
 
 bidApp.controllers.bid.
-controller('ProductsCtrl', ['$scope', '$http', 'ModalService',
-function($scope, $http, modalService) {
+controller('ProductsCtrl', ['$scope', '$http',// 'ModalEventService',
+function($scope, $http) {
     $scope.collection = new bidApp.models.Product(bidApp.stores.products);
     $scope.products = $scope.collection.getProducts();
-    window['s'] = $scope
+
     var view = angular.element('[ng-controller=ProductsCtrl]')
     view.addClass('loading');
     $http.get('products/product').
@@ -19,33 +19,7 @@ function($scope, $http, modalService) {
         error(function () {
             view.removeClass('loading');
         });
-
-    $scope.$on('onAddProduct', function (e, removeMask) {
-        console.log('onAddProduct')
-        modalService.show(function () {
-            this.setContent({
-                'body'      : {
-                    type: 'form',
-                    url : 'products/product?type=form'
-                },
-                'title'     : 'Tytuł',
-                'buttons'   : [
-                    {
-                        name    : 'Save it',
-                        function: function () {
-                            console.log('AGREEMENTS');
-                            console.log(arguments);
-                        }
-                    },
-                    {
-                        name    : 'Delete',
-                        class   : 'btn-danger'
-                    }
-                ]
-            });
-        });
-        //modalService.body = 'bbbbbbbbb';
-        removeMask();
-
-    });
+    //setTimeout(function () {
+    //    $scope.$root.$broadcast('onAddProduct', function(){});
+    //},4000)
 }]);
