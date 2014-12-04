@@ -11,3 +11,11 @@ django-filter
 
 #selenium
 selenium
+
+#mongo
+git+https://github.com/django-nonrel/django@nonrel-1.5
+git+https://github.com/django-nonrel/djangotoolbox
+git+https://github.com/django-nonrel/mongodb-engine
+
+#Testing
+#git+https://github.com/snormore/django-mongotesting.git
