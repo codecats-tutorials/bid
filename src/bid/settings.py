@@ -65,11 +65,21 @@ WSGI_APPLICATION = 'bid.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+#TODO: https://docs.djangoproject.com/en/dev/topics/db/multi-db/
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+    'default_mongo': {
+        'ENGINE': 'django_mongodb_engine',
+        'NAME': 'bid',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '27017',
+        'SUPPORTS_TRANSACTIONS': False,
+    },
 }
 
 # Internationalization
