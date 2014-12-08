@@ -10,7 +10,7 @@ class ServeView(TemplateView):
     template_name = 'frontend/index.html'
     def get(self, request, *args, **kwargs):
         #GridFS
-        db = MongoClient().gridfs_example
+        # db = MongoClient().gridfs_example
         #storing example
         #db.example.insert({'name': 'test'})
 
@@ -18,3 +18,6 @@ class ServeView(TemplateView):
         # fs = gridfs.GridFS(db)
         # fs.put('hello world')
         return self.render_to_response({})
+
+class HelperTemplate(TemplateView):
+    template_name = 'frontend/helper/template/index.html'

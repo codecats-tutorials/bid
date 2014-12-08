@@ -30,6 +30,7 @@ bidApp.controller.bid.
         function ($scope, $http, $modal) {
             $scope.view = angular.element('#modal');
             $scope.data = {};
+            $scope.form = {'errors': []};
             $scope.setContent       = function (contentObjects) {
                 $scope.disabled = 'disable';
                 var hasBody = false;
@@ -112,20 +113,23 @@ bidApp.controller.bid.
                                         method  : form.method,
                                         data    : {data: data}
                                     }).then(
-                                        function success () {
-                                            $modal({
-                                                title           : 'Error',
-                                                content         : 'Error',
-                                                animation       : 'am-fade-and-slide-top',
-                                                backdropAnimation: 'am-fade-and-slide-top'
-                                            });
-
+                                        function success (data) {
+                                            $scope.form.errors = data.data.errors;
+                                            if (data.data.success) {
+                                                $modal({
+                                                    title           : 'Success',
+                                                    content         : data.success,
+                                                    animation       : 'am-fade-and-slide-bottom',
+                                                    backdropAnimation: 'am-fade-and-slide-bottom'
+                                                });
+                                            }
                                         },
-                                        function failure () {
+                                        function failure (data) {
+                                            console.log(data)
                                             $modal({
                                                 title           : 'Error',
-                                                content         : 'Error',
-                                                template: 'test.html',
+                                                content         : data.statusText,
+                                                //template        : 'helper/template/index.html',
                                                 animation       : 'am-fade-and-slide-bottom',
                                                 backdropAnimation: 'am-fade-and-slide-top'
                                             });

@@ -1,11 +1,14 @@
 import json
 import logging
 from time import sleep
+from django.core.exceptions import PermissionDenied
 from django.forms import model_to_dict
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from code_cats.views import APIView
 from products import models
+from products.forms.product import ProductAddForm
+
 
 class Products(APIView):
     def get(self, request, *args, **kwargs):
@@ -22,18 +25,34 @@ class Products(APIView):
             'success': True,
             'data': [model_to_dict(product) for product in models.Product.objects.all()],
         })
+
     def get_form(self, request, *args, **kwargs):
         return render(request, 'products/form.html', {})
+
     def post(self, request, *args, **kwargs):
 
         # product = models.Product()
         # product.name = request.DATA.get('name', 'Samsung')
         # product.cost = 752.5
         # product.save()
-        self.response({}, '')
+        #raise PermissionDenied()
+        form = ProductAddForm(data=request.DATA)
+        if form.is_valid():
+            form.save()
+        return JsonResponse({
+            'success': form.is_valid(),
+            'errors': form.errors,
+            'pk': 1,
+        })
 
     def put(self, request, *args, **kwargs):
-        self.response({}, '')
+        return JsonResponse({
+            'success': True,
+            'pk': None,
+        })
 
     def delete(self, request, *args, **kwargs):
-        self.response({}, '')
+        return JsonResponse({
+            'success': True,
+            'pk': 1,
+        })
