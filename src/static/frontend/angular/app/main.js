@@ -1,9 +1,16 @@
 var bidApp = angular.module('bidApp', [
     'ngRoute',
     'ngCookies',
-    'bidControllers',
-    'bidServices'
-//    'bidFilters'
+    'ngAnimate',
+    'bidController',
+    'bidService',
+    'bidDirective',
+//    'bidFilters',
+    //https://github.com/mgcrea/angular-strap
+    'mgcrea.ngStrap.modal',
+    'mgcrea.ngStrap.aside',
+    'mgcrea.ngStrap.tooltip'
+
 ]);
 
 bidApp.run(function run ($http, $cookies) {

@@ -12,14 +12,9 @@ from products.forms.product import ProductAddForm
 
 class Products(APIView):
     def get(self, request, *args, **kwargs):
-        sleep(3)
-        a = 4
-        print 'aaaaaaaaaa'
-        #return HttpResponse('a')
         action = 'get_{}'.format(request.GET.get('type', 'default'))
         return getattr(self, action)(request, *args, **kwargs)
 
-        #return render(request, 'products/products.ajax.html', {'products': models.Product.objects.all()})
     def get_default(self, request, *args, **kwargs):
         return JsonResponse({
             'success': True,
@@ -27,29 +22,21 @@ class Products(APIView):
         })
 
     def get_form(self, request, *args, **kwargs):
-        return render(request, 'products/form.html', {})
+        return render(request, 'products/form.html', {'form': ProductAddForm()})
 
     def post(self, request, *args, **kwargs):
-
-        # product = models.Product()
-        # product.name = request.DATA.get('name', 'Samsung')
-        # product.cost = 752.5
-        # product.save()
-        #raise PermissionDenied()
         form = ProductAddForm(data=request.DATA)
+        pk = None
         if form.is_valid():
-            form.save()
+            pk = form.save().pk
         return JsonResponse({
             'success': form.is_valid(),
             'errors': form.errors,
-            'pk': 1,
+            'pk': pk,
         })
 
     def put(self, request, *args, **kwargs):
-        return JsonResponse({
-            'success': True,
-            'pk': None,
-        })
+        return self.post(request, *args, **kwargs)
 
     def delete(self, request, *args, **kwargs):
         return JsonResponse({

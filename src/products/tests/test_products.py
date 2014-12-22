@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 from django.test import LiveServerTestCase
 
 class ProductsTest(LiveServerTestCase):
-    #fixtures = ['admin.json']
+    fixtures = ['admin.json']
 
     def setUp(self):
         self.browser = webdriver.Firefox()

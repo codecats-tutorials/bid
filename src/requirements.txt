@@ -19,3 +19,5 @@ git+https://github.com/django-nonrel/mongodb-engine
 
 #Testing
 #git+https://github.com/snormore/django-mongotesting.git
+
+django-angular

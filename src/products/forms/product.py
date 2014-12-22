@@ -7,5 +7,6 @@ class ProductAddForm(forms.ModelForm):
     class Meta:
         model=Product
 
+
     def clean(self):
-        raise forms.ValidationError('no words')
+        raise forms.ValidationError('no words.')
