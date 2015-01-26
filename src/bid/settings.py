@@ -72,6 +72,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'TEST_NAME': 'my_test_sql',
+        'TEST_USER': 'test_sql_user',
+        'TEST_PASSWORD': 'password'
     },
     'default_mongo': {
         'ENGINE': 'django_mongodb_engine',
@@ -81,6 +84,9 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '27017',
         'SUPPORTS_TRANSACTIONS': False,
+        'TEST_NAME': 'my_test_mongodb',
+        'TEST_USER': 'test_mongo_user',
+        'TEST_PASSWORD': 'password'
     },
 }
 
@@ -160,4 +166,11 @@ if 'HEROKU' in os.environ:
 
 
 MEDIA_ROOT = ''
-STATIC_ROOT = '/home/t/py/django/bid/src/static'
+STATIC_ROOT = os.path.join(BASE_DIR, STATIC_URL.strip("/"))
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'layout'),
+)
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'site_media')
+
