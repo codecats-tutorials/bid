@@ -1,4 +1,6 @@
+import json
 import time
+from bid.settings import STATIC_URL
 from django.http import StreamingHttpResponse, HttpResponse
 from django.shortcuts import render
 from django.views.generic import View, TemplateView
@@ -17,7 +19,10 @@ class ServeView(TemplateView):
         #gridfs example
         # fs = gridfs.GridFS(db)
         # fs.put('hello world')
-        return self.render_to_response({})
+        config = json.dumps({
+            'STATIC_URL': STATIC_URL
+        })
+        return self.render_to_response({'CONFIG': config})
 
 class HelperTemplate(TemplateView):
     template_name = 'frontend/helper/template/index.html'
