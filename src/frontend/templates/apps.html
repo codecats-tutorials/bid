@@ -1,0 +1,19 @@
+{% load staticfiles %}
+{% block app_frontend %}
+<script type="text/javascript" src="{% static 'js/app/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/config.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/routing.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive.js' %}"></script>
+    {% endblock %}
+    {% block app_products %}
+<script type="text/javascript" src="{% static 'js/products/app/store.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/products/app/model.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/products/app/controller.js' %}"></script>
+    {% endblock %}
+    {% block app_example %}
+<script type="text/javascript" src="{% static 'js/example/app/store.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/example/app/model.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/example/app/controller.js' %}"></script>
+    {% endblock %}
