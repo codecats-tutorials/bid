@@ -23,22 +23,40 @@ def create_venv():
 
 
 def install_nginx():
-    pass
+    sudo('apt-get install nginx')
+    sudo('/etc/init.d/nginx start')
+    sudo('/etc/init.d/nginx status')
+    sudo('cp /vagrant/pattern/nginx.bid /etc/nginx/sites-available/bid')
+    sudo('ln -s /etc/nginx/sites-available/bid /etc/nginx/sites-enabled/bid')
+    sudo('rm /etc/nginx/sites-enabled/default')
+    sudo('/etc/init.d/nginx restart')
+    sudo('/etc/init.d/nginx status')
 
 def install_postgresql():
     pass
 
 def install_gunicorn():
-    pass
+    with virtualenv('/home/vagrant/venv-bid'):
+        run('pip install gunicorn')
+    run('cp -R /vagrant/pattern/gunicorn/gunicorn_start /home/vagrant/venv-bid/bin/gunicorn_start')
+    run('chmod u+x /home/vagrant/venv-bid/bin/gunicorn_start')
+    #test after set permissions for user bid
+    #sudo('/home/vagrant/venv-bid/bin/gunicorn_start')
 
 def install_supervisor():
-    pass
+    sudo('apt-get install supervisor')
+    sudo('cp /vagrant/pattern/supervisor.conf.d /etc/supervisor/conf.d/bid.conf')
+    sudo('supervisorctl reread')
+    sudo('supervisorctl update')
 
 def configure_server():
     pass
 
 def set_permissions():
-    configure_os_users()
+    try:
+        configure_os_users()
+    except:
+        pass
     sudo('chown -R bid venv-bid')
     sudo('chgrp -R webapps venv-bid')
 
@@ -47,11 +65,13 @@ def install_requirements():
         run('pip install -r /home/vagrant/bid/requirements.txt')
 
 def install():
+    sudo('chmod 777 /vagrant/src/mysite.log')
     install_os_libs()
     create_venv()
     install_requirements()
-    install_gunicorn()#<-todo: start here
+    set_permissions()
+    install_gunicorn()
     install_supervisor()
+    install_nginx()
     configure_server()
     install_postgresql()
-    # set_permissions()
