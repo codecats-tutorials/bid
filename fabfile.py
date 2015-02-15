@@ -19,7 +19,7 @@ def configure_os_users():
 
 def create_venv():
     #sudo -u bid
-    sudo('virtualenv /home/vagrant/venv-bid')
+    run('virtualenv /home/vagrant/venv-bid')
 
 
 def install_nginx():
@@ -28,7 +28,7 @@ def install_nginx():
     sudo('/etc/init.d/nginx status')
     sudo('cp /vagrant/pattern/nginx.bid /etc/nginx/sites-available/bid')
     sudo('ln -s /etc/nginx/sites-available/bid /etc/nginx/sites-enabled/bid')
-    sudo('rm /etc/nginx/sites-enabled/default')
+    #sudo('rm /etc/nginx/sites-enabled/default')
     sudo('/etc/init.d/nginx restart')
     sudo('/etc/init.d/nginx status')
 
@@ -41,6 +41,7 @@ def install_gunicorn():
         run('pip install setproctitle')
     run('cp -R /vagrant/pattern/gunicorn/gunicorn_start /home/vagrant/venv-bid/bin/gunicorn_start')
     run('chmod u+x /home/vagrant/venv-bid/bin/gunicorn_start')
+    sudo('/home/vagrant/venv-bid/bin/gunicorn_start')
     #test after set permissions for user bid
     #sudo('/home/vagrant/venv-bid/bin/gunicorn_start')
 
@@ -60,6 +61,8 @@ def set_permissions():
         pass
     sudo('chown -R bid venv-bid')
     sudo('chgrp -R webapps venv-bid')
+    sudo('chown -R bid bid')
+    sudo('chgrp -R webapps bid')
 
 def install_requirements():
     with virtualenv('/home/vagrant/venv-bid'):
@@ -76,3 +79,7 @@ def install():
     install_nginx()
     configure_server()
     install_postgresql()
+
+def restart_server():
+    sudo('supervisorctl restart bid')
+    sudo('/etc/init.d/nginx restart')

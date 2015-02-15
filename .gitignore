@@ -4,3 +4,5 @@ venv*
 *.py[co]
 *~
 django/
+bid/logs/*
+mysite.log
