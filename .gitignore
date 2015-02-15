@@ -4,5 +4,6 @@ venv*
 *.py[co]
 *~
 django/
-bid/logs/*
-mysite.log
+src/bid/logs/*
+!src/bid/logs/.gitignore
+src/mysite.log
