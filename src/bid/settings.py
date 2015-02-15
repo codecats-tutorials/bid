@@ -76,18 +76,18 @@ DATABASES = {
         'TEST_USER': 'test_sql_user',
         'TEST_PASSWORD': 'password'
     },
-    'default_mongo': {
-        'ENGINE': 'django_mongodb_engine',
-        'NAME': 'bid',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '27017',
-        'SUPPORTS_TRANSACTIONS': False,
-        'TEST_NAME': 'my_test_mongodb',
-        'TEST_USER': 'test_mongo_user',
-        'TEST_PASSWORD': 'password'
-    },
+    # 'default_mongo': {
+    #     'ENGINE': 'django_mongodb_engine',
+    #     'NAME': 'bid',
+    #     'USER': '',
+    #     'PASSWORD': '',
+    #     'HOST': 'localhost',
+    #     'PORT': '27017',
+    #     'SUPPORTS_TRANSACTIONS': False,
+    #     'TEST_NAME': 'my_test_mongodb',
+    #     'TEST_USER': 'test_mongo_user',
+    #     'TEST_PASSWORD': 'password'
+    # },
 }
 
 # Internationalization

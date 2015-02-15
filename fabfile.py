@@ -38,6 +38,7 @@ def install_postgresql():
 def install_gunicorn():
     with virtualenv('/home/vagrant/venv-bid'):
         run('pip install gunicorn')
+        run('pip install setproctitle')
     run('cp -R /vagrant/pattern/gunicorn/gunicorn_start /home/vagrant/venv-bid/bin/gunicorn_start')
     run('chmod u+x /home/vagrant/venv-bid/bin/gunicorn_start')
     #test after set permissions for user bid

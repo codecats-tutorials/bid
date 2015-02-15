@@ -13,11 +13,12 @@ server {
  
     client_max_body_size 4G;
  
-    access_log /home/vagrant/bid/logs/nginx-access.log;
-    error_log /home/vagrant/bid/logs/nginx-error.log;
+    access_log /home/vagrant/bid/bid/logs/nginx-access.log;
+    error_log /home/vagrant/bid/bid/logs/nginx-error.log;
  
     location /static/ {
-        alias   /home/vagrant/bid/bid/static/;
+        #alias   /home/vagrant/bid/bid/static/;
+	alias   /vagrant/src/static/;
     }
     
     location /media/ {
