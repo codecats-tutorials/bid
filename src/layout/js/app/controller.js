@@ -4,8 +4,8 @@ bidApp.controller.bid = angular.module('bidController', ['mgcrea.ngStrap']);
 /* Ctrl */
 
 bidApp.controller.bid.
-    controller('MainCtrl', ['$scope', '$http', '$modal',
-        function($scope, $http, $modal) {
+    controller('MainCtrl', ['$scope', '$http', '$modal', '$alert',
+        function($scope, $http, $modal, $alert) {
             var body            = angular.element('body'),
                 btnAddProduct   = angular.element('#add-product');
 
@@ -14,6 +14,7 @@ bidApp.controller.bid.
             //events
             btnAddProduct.bind('click', function () {
                 btnAddProduct.addClass('loading');
+
                 var removeMask = function (modalCtrlScope) {
                     setTimeout(function () {
                         btnAddProduct.removeClass('loading');
@@ -30,21 +31,20 @@ bidApp.controller.bid.
 bidApp.controller.bid.
     controller('ModalCtrl', ['$scope', '$http', '$modal',
         function ($scope, $http, $modal) {
+            $scope.title = 'y'
             ////events
             $scope.$on('onAddProduct', function (e, removeMask) {
                 $modal({
                     title           : 'Success',
-                    template: 'helper/template/index.html'//,
-                    //content         : 'a',
-                    //animation       : 'am-fade-and-slide-bottom',
-                    //backdropAnimation: 'am-fade-and-slide-bottom'
+                    template: 'helper/template/modal.html'
+                    //content         : 'a'
                 });
 
                 removeMask($scope);
             });
     }]);
-bidApp.controller.bid.
-    controller('MC', ['$scope', '$http', '$modal',
-        function ($scope, $http, $modal) {
-            $scope.title = 'y'
-    }]);
+//bidApp.controller.bid.
+//    controller('ModalCtrl', ['$scope', '$http', '$modal',
+//        function ($scope, $http, $modal) {
+//            $scope.title = 'y'
+//    }]);
