@@ -8,7 +8,12 @@ bidApp.controller.bid.
         function($scope, $http, $modal, $alert) {
             var body            = angular.element('body'),
                 btnAddProduct   = angular.element('#add-product');
-
+            $scope.sss2= function () {
+                alert('a')
+            }
+            $scope.sss = function () {
+                alert ('b')
+            }
             body.addClass('loading');
             $scope.title = 'Bid';
             //events
@@ -29,22 +34,26 @@ bidApp.controller.bid.
         }]);
 
 bidApp.controller.bid.
-    controller('ModalCtrl', ['$scope', '$http', '$modal',
+    controller('ModalController', ['$scope', '$http', '$modal',
         function ($scope, $http, $modal) {
             $scope.title = 'y'
+            $scope.xyz = '123'
+
+            $scope.submiter = function () {
+                console.log('click')
+                $scope.title = '123'
+            }
+
             ////events
             $scope.$on('onAddProduct', function (e, removeMask) {
+
                 $modal({
                     title           : 'Success',
-                    template: 'helper/template/modal.html'
+                    template: 'products/product?type=form'
+                    //template: 'helper/template/modal.html'
                     //content         : 'a'
                 });
 
                 removeMask($scope);
             });
     }]);
-//bidApp.controller.bid.
-//    controller('ModalCtrl', ['$scope', '$http', '$modal',
-//        function ($scope, $http, $modal) {
-//            $scope.title = 'y'
-//    }]);

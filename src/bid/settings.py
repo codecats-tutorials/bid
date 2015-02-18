@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'djangular',
 
     #project
+    'code_cats',
     'frontend',
     'products',
     'example',

@@ -28,4 +28,8 @@ class ServeView(TemplateView):
         return self.render_to_response({'CONFIG': config})
 
 class HelperTemplate(TemplateView):
-    template_name = 'frontend/helper/template/index.html'
+    template_name = 'frontend/helper/template/{}.html'
+
+    def get(self, request, *args, **kwargs):
+        self.template_name = self.template_name.format(kwargs.get('name'))
+        return super(HelperTemplate, self).get(request, *args, **kwargs)
